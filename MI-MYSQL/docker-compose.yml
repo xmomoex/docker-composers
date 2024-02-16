@@ -25,7 +25,7 @@ services:
     tty: true
 
 
-#docker network create --subnet 172.100.0.0/16 mi-mysql-red-dc
+#docker network create --subnet 172.25.0.0/16 mi-mysql-red-dc
 networks:
   mi-mysql-red-dc:
     ipam:
