@@ -1,4 +1,5 @@
 services:
+  # docker run -it --name mi-mysql-dc --net mi-mysql-red-dc --mount source=mi-mysql-vol-dc,target=/data/db -e MYSQL_ROOT_PASSWORD=pass mysql
   mi-mysql-dc:
     container_name: mi-mysql-dc
     image: mysql
@@ -11,6 +12,7 @@ services:
     stdin_open: true
     tty: true
 
+  # docker run -it --name mi-dashboard-dc --net mi-mysql-red-dc -e PMA_HOST=mi-mysql-dc -p 8080:80 phpmyadmin
   mi-dashboard-dc:
     container_name: mi-dashboard-dc
     image: phpmyadmin

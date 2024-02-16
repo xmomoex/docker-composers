@@ -1,4 +1,5 @@
 services:
+  # docker run -it --name mi-mongo-dc --net mi-red-dc --mount source=mi-volumen-dc,target=/data/db mongo
   mi-mongo-dc:
     container_name: mi-mongo-dc
     image: mongo
@@ -9,6 +10,7 @@ services:
     stdin_open: true
     tty: true
 
+ # docker run -it --name mi-mongo-express-dc --net mi-red-dc -e ME_CONFIG_MONGODB_SERVER=mi-mongo-dc -p 8081:8081 mongo-express
   mi-mongo-express-dc:
     container_name: mi-mongo-express-dc
     image: mongo-express
